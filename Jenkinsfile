@@ -4,11 +4,12 @@ node('') {
 	}
 	
 	stage ('Build'){
-		sh "mvn clean install -Dmaven.test.skip=true"
+		sh "mvn clean install"
 	}
 
-	stage ('Test Cases Execution'){
+	stage ('Compile'){
 		//sh "mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install -Pcoverage-per-test"
+		sh "mvn clean compile"
 	}
 
 	stage ('Sonar Analysis'){
