@@ -1,4 +1,9 @@
 node('') {
+	agent any
+      tools {
+        maven 'Maven 3.8.4'
+        jdk ' 17.0.1.0'
+    }
 	stage ('checkout code'){
 		checkout scm
 	}
